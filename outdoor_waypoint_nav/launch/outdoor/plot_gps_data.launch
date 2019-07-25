@@ -5,7 +5,7 @@
 	<arg name="filtered_coordinates_file_dir" value="/waypoint_files/plot_filtered_points.txt" />
 	<arg name="raw_coordinates_file_dir" value="/waypoint_files/plot_raw_points.txt" />
 	<arg name="num_points" value="1000" />
-	<arg name="collection_time" value="0.2" />
+	<arg name="collection_time" value="1" />
 
   <!-- Run collect_gps_waypoints node -->
   	<node pkg="outdoor_waypoint_nav" type="plot_gps_waypoints" name="plot_gps_waypoints" output="screen"/>

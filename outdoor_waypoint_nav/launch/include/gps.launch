@@ -23,7 +23,7 @@
       
       <param name="frame_id" value="GPS_link" />
       <param name="time_ref_source" value="GPS_link"/>
-      <param name="useRMC" value="true"/>
+      <param name="useRMC" value="false"/>
  
    </node>
 
