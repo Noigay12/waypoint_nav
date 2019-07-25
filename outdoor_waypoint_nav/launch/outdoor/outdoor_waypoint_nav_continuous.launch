@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <!-- Run robot_bringup -->
+    <include file="$(find outdoor_waypoint_nav)/launch/include/robot_bringup.launch" />
+
+    <!-- Launch GPS -->
+    <!-- <include file="$(find outdoor_waypoint_nav)/launch/include/gps.launch" /> -->
+
+    <!-- Launch robot_localization and navsat -->
+    <include file="$(find outdoor_waypoint_nav)/launch/include/localization_run.launch"/>
+
+    <!-- Run navigation to enable move_base -->
+    <include file="$(find navigation)/launch/navigation_continuous.launch" />
+
+    <!-- launch safety node to allow the user to disable velocity commands to the robot -->
+    <include file="$(find outdoor_waypoint_nav)/launch/include/safety_node.launch" />
+
+    <!-- Filter Laser -->
+    <include file="$(find outdoor_waypoint_nav)/launch/include/laser_filter.launch" />
+
+</launch>

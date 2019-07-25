@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+	<arg name="coordinates_file_dir" value="/waypoint_files/points_outdoor.txt" />
+
+  <!-- Run collect_gps_waypoints node -->
+  	<node ns="/outdoor_waypoint_nav" pkg="outdoor_waypoint_nav" type="collect_gps_waypoints" name="collect_gps_waypoints" output="screen"/>
+			<!-- WARNING: This will replace any file in this directory with the same name.-->
+			<param name="/outdoor_waypoint_nav/coordinates_file" value="$(arg coordinates_file_dir)" type="string" />
+
+</launch>
+			

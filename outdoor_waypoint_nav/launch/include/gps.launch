@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<launch>
+
+  <group ns="GPS">
+
+    <!-- NavSat Serial -->
+    <node pkg="nmea_comms" type="serial_node" name="nmea_serial_node" > <!--output="screen"-->
+      
+      <!-- for Garmin GPS -->
+	    <!--
+      <param name="port" value="/dev/ftdi_FTVBIBT1" />
+      <param name="baud" value="19200" />
+     	-->
+
+      <!-- For Novatel GPS -->
+      <param name="port" value="/dev/ttyACM0" />
+      <!-- The GPS Device Path -->
+      <!-- Nhớ Sửa! -->
+
+      <param name="baud" value="9600" />
+      <!-- The baud rate to receive NMEA data -->
+      <!-- Nhớ Sửa! -->
+      
+      <param name="frame_id" value="GPS_link" />
+      <param name="time_ref_source" value="GPS_link"/>
+      <param name="useRMC" value="true"/>
+ 
+   </node>
+
+    <!-- NavSat Processing -->
+    <node pkg="nmea_navsat_driver" type="nmea_topic_driver" name="nmea_topic_driver">
+      <remap from="/GPS/fix" to="/navsat/fix" />
+    </node>
+
+  </group>
+
+</launch>

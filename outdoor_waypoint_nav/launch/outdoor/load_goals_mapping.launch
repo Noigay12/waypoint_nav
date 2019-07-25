@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+    <include file="$(find outdoor_waypoint_nav)/launch/outdoor/plot_gps_data.launch" />
+    <include file="$(find outdoor_waypoint_nav)/launch/include/collect_goals.launch" />
+    <include file="$(find outdoor_waypoint_nav)/launch/include/send_goals_mapping.launch" />
+    <include file="$(find outdoor_waypoint_nav)/launch/include/heading_calibration.launch" />
+
+</launch>
