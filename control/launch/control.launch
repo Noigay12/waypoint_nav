@@ -9,11 +9,11 @@
     <rosparam command="load" file="$(find control)/config/localization.yaml" />
   </node-->
 
-  <!-- <node pkg="interactive_marker_twist_server" type="marker_server" name="twist_marker_server" output="screen"/>
+  <node pkg="interactive_marker_twist_server" type="marker_server" name="twist_marker_server" output="screen"/>
 
   <node pkg="twist_mux" type="twist_mux" name="twist_mux">
     <rosparam command="load" file="$(find control)/config/twist_mux.yaml" />
     <remap from="/cmd_vel" to="/cmd_vel"/>
-  </node> -->
+  </node>
 
 </launch>

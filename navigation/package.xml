@@ -4,7 +4,7 @@
   <version>0.0.1</version>
   <description>The package is used to run the navigation stack</description>
 
-  <maintainer email="lolisaka12@gmail.com">Nick Charron</maintainer>
+  <maintainer email="lolisaka12@gmail.com">Tran Huu Quoc Dong</maintainer>
   <license>BSD</license>
 
   <buildtool_depend>catkin</buildtool_depend>
