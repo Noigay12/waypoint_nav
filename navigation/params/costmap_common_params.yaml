@@ -1,0 +1,20 @@
+#
+map_type: costmap
+# origin_z: 0.0
+# z_resolution: 1
+# z_voxels: 2  # Số lượng voxels trong mỗi trục dọc, độ cao của lưới = z resolution * z voxels.
+
+obstacle_range: 3.0 # Khoảng cách tối đa mặc định từ Robot mà tại đó chướng ngại vật trước mặt sẽ được đưa vào bản đồ, tính bằng mét.
+raytrace_range: 3.5 # Phạm vi mặc định tính bằng mét để phát hiện chướng ngại vật trên bản đồ bằng dữ liệu cảm biến.
+
+publish_voxel_map: false
+
+footprint: [[-0.105, -0.105], [-0.105, 0.105], [0.041, 0.105], [0.041, -0.105]]
+# footprint_padding: 0.2
+inflation_radius: 1.0  # Kiểm soát khoảng cách điểm 0 tới chướng ngại vật
+cost_scaling_factor: 3.0 # Khoảng cách giữa đường cong quỹ đạo tránh với vật cản.
+
+observation_sources: scan
+
+scan: {sensor_frame: base_scan, data_type: LaserScan, topic: scan, marking: true, clearing: true}
+
