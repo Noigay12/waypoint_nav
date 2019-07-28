@@ -16,7 +16,7 @@
 
     <remap from="odom" to="/outdoor_waypoint_nav/odometry/filtered/global" />
     <remap from="cmd_vel" to="/cmd_vel_intermediate" />
-    <remap from="map" to="/map" />
+    <remap from="/map" to="/map" />
     <remap from="scan" to="/scan" />
     
   </node>

@@ -6,7 +6,7 @@
   <arg name="scan_topic" default="/scan" />
   <arg name="map_topic" default="map" />
 
-  <node ns="/outdoor_waypoint_nav" pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="log" >
+  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="log" >
     
 
     <!-- Setting frames -->

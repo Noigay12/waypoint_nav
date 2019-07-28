@@ -28,7 +28,7 @@ ekf_se_odom: # Used only for broadcasting odom to base_link transforms
   odom0: /odom
   odom0_config: [false, false, false,
                  false, false, false,
-                 true,  true,  true,
+                 true,  true,  false,
                  false, false, false,
                  false, false, false]
   odom0_queue_size: 10
@@ -40,32 +40,44 @@ ekf_se_odom: # Used only for broadcasting odom to base_link transforms
 # Laser Scanmatching Odometry:
 # Dùng thêm Laser (VD: Lidar) để filter odom cho chuẩn xác hơn
 
-#  odom1: scanmatch_odom
-#  odom1_config: [false, false, false,
-#                 false, false, false,
-#                 true,  true,  true,
-#                 false, false, true,
-#                 false, false, false]
-#  odom1_queue_size: 10
-#  odom1_nodelay: true
-#  odom1_differential: false
-#  odom1_relative: false
+  odom1: /scanmatch_odom
+  odom1_config: [false, false, false,
+                false, false, false,
+                true,  true,  false,
+                false, false, true,
+                false, false, false]
+  odom1_queue_size: 10
+  odom1_nodelay: true
+  odom1_differential: false
+  odom1_relative: false
 
 # --------------------------------------
 # IMU Configure:
 # Filter IMU
 
-  imu0: /imu
+  imu0: /imu/data
   imu0_config: [false, false, false,
-               true,  true,  true,
+               false,  false,  true,
                false, false, false,
-               true,  true,  true,
-               true,  true,  true]
+               false,  false,  true,
+               true,  true,  false]
   imu0_nodelay: true
   imu0_differential: false
   imu0_relative: false
   imu0_queue_size: 10
   imu0_remove_gravitational_acceleration: true
+
+  # imu1: /imu
+  # imu1_config: [false, false, false,
+  #              false,  false,  true,
+  #              false, false, false,
+  #              false,  false,  true,
+  #              true,  true,  false]
+  # imu1_nodelay: true
+  # imu1_differential: false
+  # imu1_relative: false
+  # imu1_queue_size: 10
+  # imu1_remove_gravitational_acceleration: true
 
   use_control: false
 
@@ -104,7 +116,7 @@ ekf_se_odom: # Used only for broadcasting odom to base_link transforms
 ekf_se_map:
   frequency: 100
   sensor_timeout: 0.01
-  two_d_mode: true
+  two_d_mode: false
   # publish_tf: true
   transform_time_offset: 0.0
   # predict_to_current_time: true
@@ -126,16 +138,16 @@ ekf_se_map:
 # Wheel Odometry Configure:
 # Filter Odom từ Encoder Bánh xe
 
-  odom0: /odom
-  odom0_config: [false, false, false,
-                 false, false, false,
-                 true,  true,  true,
-                 false, false, false,
-                 false, false, false]
-  odom0_queue_size: 10
-  odom0_nodelay: true
-  odom0_differential: false
-  odom0_relative: false
+  # odom0: /odom
+  # odom0_config: [false, false, false,
+  #                false, false, false,
+  #                true,  true,  false,
+  #                false, false, false,
+  #                false, false, false]
+  # odom0_queue_size: 10
+  # odom0_nodelay: true
+  # odom0_differential: false
+  # odom0_relative: false
 
 # -------------------------------------
 # GPS Odometry Configure:
@@ -156,47 +168,59 @@ ekf_se_map:
 # Laser Scanmatching Odometry:
 # Dùng thêm Laser (VD: Lidar) để filter odom cho chuẩn xác hơn
 
-#  odom2: scanmatch_odom
-#  odom2_config: [false, false, false,
-#                 false, false, false,
-#                 true,  true,  true,
-#                 false, false, true,
-#                 false, false, false]
-#  odom2_queue_size: 10
-#  odom2_nodelay: true
-#  odom2_differential: false
-#  odom2_relative: false
+  odom2: /scanmatch_odom
+  odom2_config: [true, true, false,
+                false, false, true,
+                true,  true,  false,
+                false, false, true,
+                false, false, false]
+  odom2_queue_size: 10
+  odom2_nodelay: true
+  odom2_differential: false
+  odom2_relative: false
 
 # --------------------------------------
 # Pose Configure:
 # Filter Pose
 
-  # pose0: /poseupdate
-  # pose0_config: [true, true, true,
-  #                false, false, false,
-  #                false, false, false,
-  #                false, false, false,
-  #                false, false, false]
-  # pose0_queue_size: 10
-  # pose0_nodelay: true
-  # pose0_differential: false
-  # pose0_relative: false
+  pose0: /poseupdate
+  pose0_config: [true, true, true,
+                 false, false, false,
+                 false, false, false,
+                 false, false, false,
+                 false, false, false]
+  pose0_queue_size: 10
+  pose0_nodelay: true
+  pose0_differential: false
+  pose0_relative: false
 
 # --------------------------------------
 # IMU Configure:
 # Filter IMU
 
-  imu0: /imu
+  imu0: /imu/data
   imu0_config: [false, false, false,
-                true,  true,  true,
-                false, false, false,
-                true,  true,  true,
-                true,  true,  true]
+               false,  false,  true,
+               false, false, false,
+               false,  false,  true,
+               true,  true,  false]
   imu0_nodelay: true
   imu0_differential: false
   imu0_relative: false
   imu0_queue_size: 10
   imu0_remove_gravitational_acceleration: true
+
+  # imu1: /imu
+  # imu1_config: [false, false, false,
+  #              false,  false,  true,
+  #              false, false, false,
+  #              false,  false,  true,
+  #              true,  true,  false]
+  # imu1_nodelay: true
+  # imu1_differential: false
+  # imu1_relative: false
+  # imu1_queue_size: 10
+  # imu1_remove_gravitational_acceleration: true
 
   # smooth_lagged_data: true
   # history_length: 3.0

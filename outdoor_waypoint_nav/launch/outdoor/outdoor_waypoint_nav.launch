@@ -3,13 +3,16 @@
 <launch>
 
     <!-- Run robot_bringup -->
-    <include file="$(find outdoor_waypoint_nav)/launch/include/robot_bringup.launch" />
+    <!-- <include file="$(find outdoor_waypoint_nav)/launch/include/robot_bringup.launch" /> -->
 
     <!-- Launch GPS -->
-    <include file="$(find outdoor_waypoint_nav)/launch/include/gps.launch" />
+    <!-- <include file="$(find outdoor_waypoint_nav)/launch/include/gps.launch" /> -->
+
+    <!-- Launch Imu -->
+    <!-- <include file="$(find mpu6050)/launch/imu.launch" /> -->
 
     <!-- Filter Laser -->
-    <include file="$(find outdoor_waypoint_nav)/launch/include/laser_filter.launch" />
+    <!-- <include file="$(find outdoor_waypoint_nav)/launch/include/laser_filter.launch" /> -->
     
     <!-- Run gmapping to create map -->
     <!-- <include file="$(find navigation)/launch/gmapping.launch" /> -->
@@ -18,12 +21,12 @@
     <!-- <include file="$(find hector_mapping_nav)/launch/scanmatch_nav.launch" /> -->
 
     <!-- Launch robot_localization and navsat -->
-    <include file="$(find outdoor_waypoint_nav)/launch/include/localization_run.launch" />
+    <!-- <include file="$(find outdoor_waypoint_nav)/launch/include/localization_run.launch" /> -->
 
     <!-- Run navigation to enable move_base -->
-    <include file="$(find navigation)/launch/navigation.launch" />
+    <!-- <include file="$(find navigation)/launch/navigation.launch" /> -->
 
     <!-- launch safety node to allow the user to disable velocity commands to the robot -->
-    <include file="$(find outdoor_waypoint_nav)/launch/include/safety_node.launch" />
+    <!-- <include file="$(find outdoor_waypoint_nav)/launch/include/safety_node.launch" /> -->
 
 </launch>
