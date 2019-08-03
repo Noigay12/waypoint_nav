@@ -1,7 +1,6 @@
 <launch>
-
-  <node pkg="mpu6050" type="mpu6050" name="mpu6050" required="true">
-    <param name="port" value="/dev/ttyACM1"/>
+  <node pkg="mpu6050" type="imu" name="imu" required="true">
+    <param name="port" value="/dev/ttyACM0" />
   </node>
 
   <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find mpu6050)/rviz/demo.rviz" required="true"/> -->

@@ -26,7 +26,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES mpu6050_serial_to_imu
+#  LIBRARIES mpu6050
   CATKIN_DEPENDS roscpp geometry_msgs sensor_msgs serial std_msgs std_srvs tf
 #  DEPENDS system_lib
 )
@@ -43,10 +43,10 @@ include_directories(
 )
 
 ## Declare a C++ executable
-add_executable(mpu6050 src/mpu6050.cpp)
+add_executable(imu src/imu.cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(mpu6050
+target_link_libraries(imu
   ${catkin_LIBRARIES}
 )
 
@@ -56,7 +56,7 @@ target_link_libraries(mpu6050
 
 
 ## Mark executables and/or libraries for installation
-install(TARGETS mpu6050
+install(TARGETS imu
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
